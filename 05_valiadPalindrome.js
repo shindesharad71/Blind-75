@@ -8,8 +8,7 @@ const isPalindrome = function (s) {
   return s === reverseString;
 };
 
-// const s = "A man, a plan, a canal: Panama";
-const s = "0P";
+const s = "A man, a plan, a canal: Panama";
 console.log(isPalindrome(s));
 
 // Expected output -> true
