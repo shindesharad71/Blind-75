@@ -1,3 +1,5 @@
+// Submission - https://leetcode.com/submissions/detail/682021831/
+
 /**
  * @param {string} s
  * @return {boolean}
@@ -8,16 +10,12 @@ const isValid = function (s) {
     return false;
   }
 
-  const OPEN = new Set(['(', '{', '[']);
   const BRACKETS = { '}': '{', ')': '(', ']': '[' };
   const stack = [];
 
   for (let i = 0; i < s.length; i++) {
 
-    if (OPEN.has(s[i])) {
-      stack.push(s[i]);
-    } else {
-
+    if (s[i] in BRACKETS) {
       if (stack.length === 0) {
         return false;
       } else {
@@ -27,7 +25,8 @@ const isValid = function (s) {
           return false;
         }
       }
-
+    } else {
+      stack.push(s[i]);
     }
   }
 
